@@ -1,9 +1,0 @@
----
-- name: Stop Apache webserver
-  hosts: webservers
-  become: yes
-  tasks:
-    - name: Stop Apache service
-      service:
-        name: apache2
-        state: stopped
