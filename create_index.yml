@@ -1,0 +1,12 @@
+---
+- name: Create index.html on webservers
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Create index.html
+      copy:
+        dest: /var/www/html/index.html
+        content: "<html><head><title>Hello World</title></head><body><h1>Hello World</h1></body></html>"
+        owner: www-data
+        group: www-data
+        mode: '0644'
